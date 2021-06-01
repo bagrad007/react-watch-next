@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Movie.create(name: "Tenet", list_id: 1)
+Movie.create(name: "Lord of the Rings", list_id: 1)
+Movie.create(name: "Star Wars", list_id: 1)
+Movie.create(name: "The Social Dilemma", list_id: 1)
+Movie.create(name: "Inception", list_id: 1)
+Movie.create(name: "The Dark Knight", list_id: 1)
+Movie.create(name: "Blade Runner 2049", list_id: 1)
+
+List.create(name: "first list")
