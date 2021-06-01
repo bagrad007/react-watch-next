@@ -1,5 +1,5 @@
 import React from 'react'
-import Movie from './Movie.js'
+import Movie from './Movie'
 
 const List = () => {
     return (
