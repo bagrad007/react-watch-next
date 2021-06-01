@@ -1,10 +1,10 @@
 import React from 'react'
-import Movie from './Movie'
+
 
 const List = () => {
     return (
         <div>
-            <Movie />
+            <p>List of movies</p>
         </div>
     )
 }
