@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import List from './components/List'
+import Navigation from './components/Navigation'
+import Home from './components/Home'
 
 
 class App extends Component {
@@ -7,8 +8,8 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Navbar />
-                <List />
+                <Navigation />
+                <Home />
             </div>
         );
     }

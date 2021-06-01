@@ -1,11 +1,12 @@
 import React from 'react'
 import Movie from './Movie.js'
-export const List = () => {
+
+const List = () => {
     return (
         <div>
-            <ul>
-                <Movie />
-            </ul>
+            <Movie />
         </div>
     )
 }
+export default List
+
