@@ -9,9 +9,8 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from 'redux-thunk'
 
 import App from './App.js';
-
 const store = createStore(movieList, compose(applyMiddleware(thunk), composeWithDevTools()))
-console.log(store)
+
 
 ReactDOM.render(
     <Router>

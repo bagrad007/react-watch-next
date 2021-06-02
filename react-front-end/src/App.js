@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Navigation from './components/Navigation'
-import Home from './components/Home'
 
 
 class App extends Component {
@@ -9,7 +8,6 @@ class App extends Component {
         return (
             <div>
                 <Navigation />
-
             </div>
         );
     }

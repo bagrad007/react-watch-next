@@ -1,19 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import fetchMovies from '../actions/index'
 
 export class List extends Component {
+
+    componentDidMount() {
+        this.props.fetchMovies()
+    }
+
     render() {
         return (
             <div>
-                <p>List of movies</p>
+
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    return state.movies
 }
 
-export default connect(mapStateToProps)(List)
+
+export default connect(mapStateToProps, { fetchMovies })(List)
 

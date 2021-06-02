@@ -1,8 +1,13 @@
-export const fetchMovies = movie => {
-    // Return an action
-    return {
-        type: 'FETCH_MOVIES',
-        payload: movie
+const fetchMovies = () => {
+
+    return (dispatch) => {
+        fetch("http://localhost:3001/movies")
+            .then(resp => resp.json())
+            .then(movies => {
+                dispatch({ type: "FETCH_MOVIES", payload: movies })
+            })
     };
 
 };
+
+export default fetchMovies
