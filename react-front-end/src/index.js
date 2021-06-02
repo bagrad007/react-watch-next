@@ -15,9 +15,9 @@ console.log(store)
 
 ReactDOM.render(
     <Router>
-        {/* // <Provider> */}
-        <App />
-        {/* // </Provider>, */}
+        <Provider store={store}>
+            <App />
+        </Provider>
     </Router>,
     document.querySelector('#root')
 );

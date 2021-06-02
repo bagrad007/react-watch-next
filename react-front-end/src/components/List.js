@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-
-const List = () => {
-    return (
-        <div>
-            <p>List of movies</p>
-        </div>
-    )
+export class List extends Component {
+    render() {
+        return (
+            <div>
+                <p>List of movies</p>
+            </div>
+        )
+    }
 }
-export default List
+
+const mapStateToProps = (state) => {
+    console.log(state)
+}
+
+export default connect(mapStateToProps)(List)
 
