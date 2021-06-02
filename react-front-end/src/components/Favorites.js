@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import fetchMovies from '../actions/index'
 
-export class List extends Component {
+export class Favorites extends Component {
 
     componentDidMount() {
         this.props.fetchMovies()
@@ -11,16 +11,17 @@ export class List extends Component {
     render() {
         return (
             <div>
-
+                {this.props.movies.map(movie => <li>{movie.name}</li>)}
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    return state.movies
+    return { movies: state.movies }
+
 }
 
 
-export default connect(mapStateToProps, { fetchMovies })(List)
+export default connect(mapStateToProps, { fetchMovies })(Favorites)
 

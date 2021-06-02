@@ -4,8 +4,8 @@ import Nav from 'react-bootstrap/Nav'
 import { Route, Switch, useHistory, withRouter } from 'react-router-dom'
 
 import Home from './Home'
-import List from './List'
-import Movie from './Movie'
+import Favorites from './Favorites'
+import Search from './Search'
 
 const Navigation = (props) => {
     const history = useHistory()
@@ -37,8 +37,8 @@ const Navigation = (props) => {
             </Navbar>
             <Switch>
                 <Route path='/' exact render={props => <Home {...props} />} />
-                <Route path='/favorites' exact render={props => <List {...props} />} />
-                <Route path='/search' exact render={props => <Movie {...props} />} />
+                <Route path='/favorites' exact render={props => <Favorites {...props} />} />
+                <Route path='/search' exact render={props => <Search {...props} />} />
             </Switch>
         </>
 
