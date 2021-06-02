@@ -1,10 +1,9 @@
-const movieList = (state = { movies: [] }, action) => {
-    switch (action.type) {
-        case "FETCH_MOVIES":
-            return { movies: action.payload }
-        default:
-            return state
-    }
-}
+import { combineReducers } from 'redux';
+import movieList from './movieList';
+import searchMovies from './searchMovie'
 
-export default movieList
+const rootReducer = combineReducers({
+    movies: movieList,
+    searchedMovies: searchMovies
+})
+export default rootReducer;
