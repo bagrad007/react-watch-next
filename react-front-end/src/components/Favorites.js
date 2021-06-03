@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchMovies } from '../actions/index'
+// import MovieDisplay from './MovieDisplay'
+import Button from 'react-bootstrap/Button'
 
 export class Favorites extends Component {
 
@@ -8,12 +10,23 @@ export class Favorites extends Component {
         this.props.fetchMovies()
     }
 
+    handleDelete(movie) {
+
+    }
+
     render() {
-        console.log(this.props.movies)
         return (
             <div>
                 {this.props.movies.map(movie => {
-                    <li>{movie.name}</li>
+                    return (
+                        <>
+                            <br />
+                            <img src={`${movie.img}`} />
+                            <h2> {movie.name} </h2>
+                            <p>{movie.year}</p>
+                            <Button onClick={(e) => this.handleDelete(movie)} />
+                        </>
+                    )
                 })}
             </div>
         )

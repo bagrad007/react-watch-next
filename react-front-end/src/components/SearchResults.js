@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { searchMovies, addFavorite } from '../actions/index'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
+import MovieDisplay from './MovieDisplay'
 
 
 class searchResults extends Component {
@@ -17,10 +18,7 @@ class searchResults extends Component {
                 {this.props.searchedMovies.map(movie => {
                     return (
                         <Container>
-                            <br />
-                            <img src={`${movie.Poster}`} />
-                            <h2> {movie.Title} </h2>
-                            <p>{movie.Year}</p>
+                            <MovieDisplay props={movie} />
                             <Button onClick={(e) => this.handleFavorite(movie)}>Add to Favorites</Button>
                         </Container>
                     )
