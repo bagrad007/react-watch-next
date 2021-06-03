@@ -7,7 +7,7 @@ import Home from './Home'
 import Favorites from './Favorites'
 import Search from './Search'
 
-const Navigation = (props) => {
+const Navigation = () => {
     const history = useHistory()
 
     const handleHome = e => {

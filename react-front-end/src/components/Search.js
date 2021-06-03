@@ -1,38 +1,47 @@
 import React from 'react'
+import SearchResults from './SearchResults'
+
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import { searchMovies } from '../actions/index'
-import { useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
 
 
-const Search = (props) => {
 
-    const dispatch = useDispatch()
+class Search extends React.Component {
+    state = { term: '' }
 
-    const handleSearch = (e) => {
+
+
+    handleSearch = (e) => {
         e.preventDefault()
-        dispatch(searchMovies(e.target.children[0].children[1].value))
+        this.props.searchMovies(this.state.term)
 
     }
-    return (
-        <div>
-            <form>
-                <InputGroup className="mb-1">
-                    <InputGroup.Prepend>
-                        <InputGroup.Text id="inputGroup-sizing-default">Search For Movie</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl onSubmit={handleSearch}
-                        aria-label="Default"
-                        aria-describedby="inputGroup-sizing-default"
-                    />
-                    <InputGroup.Append>
-                        <Button className="btn btn-primary">Search</Button>
-                    </InputGroup.Append>
-                </InputGroup>
-            </form>
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                <form onSubmit={this.handleSearch}>
+                    <InputGroup className="mb-1">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="inputGroup-sizing-default">Search For Movie</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl value={this.state.term} onChange={e => this.setState({ term: e.target.value })}
+                            aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default"
+                        />
+                        <InputGroup.Append>
+                            <Button type="submit" className="btn btn-primary">Search</Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                </form>
+                <SearchResults />
+            </div >
+        )
+    }
 }
 
-export default Search
+
+
+export default connect(null, { searchMovies })(Search)

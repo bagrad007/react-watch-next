@@ -1,7 +1,7 @@
-const searchMovies = (state = { movies: [] }, action) => {
+const searchMovies = (state = [], action) => {
     switch (action.type) {
         case "SEARCH_MOVIES":
-            return { movies: action.payload }
+            return action.payload
         default:
             return state
     }

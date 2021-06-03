@@ -9,10 +9,10 @@ export class Favorites extends Component {
     }
 
     render() {
-        console.log(this.props.movies.movies)
+        console.log(this.props.movies)
         return (
             <div>
-                {this.props.movies.movies.map(movie => <li>{movie.name}</li>)}
+                {this.props.movies.map(movie => <li>{movie.name}</li>)}
             </div>
         )
     }

@@ -1,8 +1,8 @@
-const movieList = (state = { movies: [] }, action) => {
+const movieList = (state = [], action) => {
     console.log("action", action)
     switch (action.type) {
         case "FETCH_MOVIES":
-            return { movies: action.payload }
+            return action.payload
         default:
             return state
     }
