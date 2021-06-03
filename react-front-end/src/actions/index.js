@@ -5,7 +5,6 @@ export const fetchMovies = () => {
         fetch("http://localhost:3001/movies")
             .then(resp => resp.json())
             .then(movies => {
-                console.log("fetchMovies", movies)
                 dispatch({ type: "FETCH_MOVIES", payload: movies })
             })
     };
@@ -17,7 +16,6 @@ export const searchMovies = (searchTerm) => {
         fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=2d90d5c1`)
             .then(response => response.json())
             .then(movie => {
-                console.log("actioncreator", movie)
                 dispatch({ type: "SEARCH_MOVIES", payload: movie.Search })
             }
             )
@@ -27,3 +25,6 @@ export const searchMovies = (searchTerm) => {
     }
 }
 
+export const addFavorite = () => {
+
+}
