@@ -4,7 +4,12 @@ class MoviesController < ApplicationController
     render json: movies
   end
 
+  def create
+    movie = Movie.create(movie_params)
+    render json: movie
+  end
+
   def movie_params
-    params.require(:movie).permit(:name, :list_id)
+    params.require(:movie).permit(:name)
   end
 end

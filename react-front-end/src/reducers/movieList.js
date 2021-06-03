@@ -2,6 +2,8 @@ const movieList = (state = [], action) => {
     switch (action.type) {
         case "FETCH_MOVIES":
             return action.payload
+        case "FAVORITE_MOVIE":
+            return action.payload
         default:
             return state
     }

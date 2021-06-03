@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { searchMovies } from '../actions/index'
+import { searchMovies, addFavorite } from '../actions/index'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 
+
 class searchResults extends Component {
 
-    state = {
-        movies: []
-    }
+    handleFavorite(movieObject) {
 
-    handleFavorite(e) {
-        e.preventDefault()
         console.log("adds movie to DB")
-        // debugger
+        this.props.addFavorite(movieObject)
     }
 
     render() {
@@ -26,7 +23,7 @@ class searchResults extends Component {
                             <img src={`${movie.Poster}`} />
                             <h2> {movie.Title} </h2>
                             <p>{movie.Year}</p>
-                            <Button id={`${movie.Title} ${movie.Year}`} onClick={this.handleFavorite}>Add to Favorites</Button>
+                            <Button onClick={(e) => this.handleFavorite(movie)}>Add to Favorites</Button>
                         </Container>
                     )
                 })

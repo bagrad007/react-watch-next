@@ -25,6 +25,13 @@ export const searchMovies = (searchTerm) => {
     }
 }
 
-export const addFavorite = () => {
-
+export const addFavorite = (movieObject) => {
+    return (dispatch) => {
+        fetch("http://localhost:3001/movies", {
+            method: 'POST',
+            headers: { Accept: "application/json", "Content-Type": "application/json" },
+            body: JSON.stringify({ movie: movieObject })
+        }).then(r => r.json())
+            .then(movieObject => dispatch({ type: 'FAVORITE_MOVIE', payload: movieObject }))
+    }
 }
