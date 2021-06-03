@@ -12,7 +12,9 @@ export class Favorites extends Component {
         console.log(this.props.movies)
         return (
             <div>
-                {this.props.movies.map(movie => <li>{movie.name}</li>)}
+                {this.props.movies.map(movie => {
+                    <li>{movie.name}</li>
+                })}
             </div>
         )
     }

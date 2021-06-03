@@ -3,7 +3,7 @@ const movieList = (state = [], action) => {
         case "FETCH_MOVIES":
             return action.payload
         case "FAVORITE_MOVIE":
-            return action.payload
+            return [...state, action.payload]
         default:
             return state
     }

@@ -26,12 +26,21 @@ export const searchMovies = (searchTerm) => {
 }
 
 export const addFavorite = (movieObject) => {
+    console.log("addFavorite argument", movieObject)
     return (dispatch) => {
+        const movie = {
+            name: movieObject.Title,
+            year: movieObject.Year,
+            img: movieObject.Poster
+        }
         fetch("http://localhost:3001/movies", {
             method: 'POST',
             headers: { Accept: "application/json", "Content-Type": "application/json" },
-            body: JSON.stringify({ movie: movieObject })
-        }).then(r => r.json())
-            .then(movieObject => dispatch({ type: 'FAVORITE_MOVIE', payload: movieObject }))
+            body: JSON.stringify({ movie: movie })
+        })
+            .then(r => r.json())
+            .then(movieObject => {
+                return dispatch({ type: 'FAVORITE_MOVIE', payload: movieObject })
+            })
     }
 }

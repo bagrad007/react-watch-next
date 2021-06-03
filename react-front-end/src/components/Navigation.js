@@ -30,7 +30,7 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/list" onClick={handleList}>Favorited Movies</Nav.Link>
+                        <Nav.Link href="/favorites" onClick={handleList}>Favorites</Nav.Link>
                         <Nav.Link href="/search" onClick={handleSearch}>Search</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

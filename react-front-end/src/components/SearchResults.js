@@ -8,8 +8,6 @@ import Button from 'react-bootstrap/Button'
 class searchResults extends Component {
 
     handleFavorite(movieObject) {
-
-        console.log("adds movie to DB")
         this.props.addFavorite(movieObject)
     }
 
@@ -38,4 +36,4 @@ const mapStateToProps = (state) => {
     return { searchedMovies: state.searchedMovies }
 }
 
-export default connect(mapStateToProps, { searchMovies })(searchResults)
+export default connect(mapStateToProps, { searchMovies, addFavorite })(searchResults)
