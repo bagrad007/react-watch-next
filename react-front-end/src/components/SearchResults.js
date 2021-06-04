@@ -30,7 +30,6 @@ class searchResults extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("mapStateToProps", state)
     return { searchedMovies: state.searchedMovies }
 }
 

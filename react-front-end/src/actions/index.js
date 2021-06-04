@@ -26,12 +26,11 @@ export const searchMovies = (searchTerm) => {
 }
 
 export const addFavorite = (movieObject) => {
-    console.log("addFavorite argument", movieObject)
     return (dispatch) => {
         const movie = {
-            name: movieObject.Title,
-            year: movieObject.Year,
-            img: movieObject.Poster
+            Title: movieObject.Title,
+            Year: movieObject.Year,
+            Poster: movieObject.Poster
         }
         fetch("http://localhost:3001/movies", {
             method: 'POST',
@@ -42,5 +41,16 @@ export const addFavorite = (movieObject) => {
             .then(movieObject => {
                 return dispatch({ type: 'FAVORITE_MOVIE', payload: movieObject })
             })
+    }
+}
+
+export const deleteMovie = (movieId) => {
+    console.log(movieId)
+    return (dispatch) => {
+        fetch(`http://localhost:3001/movies/${movieId}`, {
+            method: "DELETE",
+            headers: { Accept: "application/json", "Content-Type": "application/json" },
+        }).then(r => r.json())
+            .then(movie => dispatch({ type: "DELETE_MOVIE", payload: movie.id }))
     }
 }

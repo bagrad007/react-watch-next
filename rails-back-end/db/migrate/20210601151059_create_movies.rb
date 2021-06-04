@@ -1,9 +1,9 @@
 class CreateMovies < ActiveRecord::Migration[6.1]
   def change
     create_table :movies do |t|
-      t.string :name
-      t.string :year
-      t.string :img
+      t.string :Title
+      t.string :Year
+      t.string :Poster
 
       t.timestamps
     end
