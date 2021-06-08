@@ -12,7 +12,7 @@ const Navigation = () => {
 
     const handleHome = e => {
         e.preventDefault()
-        history.push("/")
+        history.push("/home")
     }
 
     const handleList = e => {
@@ -26,7 +26,7 @@ const Navigation = () => {
     return (
         <>
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="/" onClick={handleHome}>Watch Next</Navbar.Brand>
+                <Navbar.Brand href="/home" onClick={handleHome}>Watch Next</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -36,7 +36,7 @@ const Navigation = () => {
                 </Navbar.Collapse>
             </Navbar>
             <Switch>
-                <Route path='/' exact render={props => <Home {...props} />} />
+                <Route path='/home' exact render={props => <Home {...props} />} />
                 <Route path='/favorites' exact render={props => <Favorites {...props} />} />
                 <Route path='/search' exact render={props => <Search {...props} />} />
             </Switch>
