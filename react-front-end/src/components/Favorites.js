@@ -14,27 +14,32 @@ export class Favorites extends Component {
         this.props.fetchMovies()
     }
 
-
+    handleDelete = (movie) => {
+        this.props.deleteMovie(movie.id)
+    }
 
 
 
     render() {
-        return (
-            <div className="moviecontainer">
-                {
-                    this.props.movies.map(movie => {
-                        return (
-                            <>
-                                <MovieDisplay props={movie} />
+        console.log(this.props)
+        if (this.props.movies !== []) {
+            return (
+                <div className="moviecontainer">
+                    {
+                        this.props.movies.map(movie => {
+                            return (
+                                <>
+                                    <MovieDisplay movie={movie} handleDelete={this.handleDelete} />
+                                </>
+                            )
+                        })
+                    }
+                </div >
+            )
+        } else {
+            return <h1>Add a movie from Search to get started!</h1>
+        }
 
-
-                            </>
-                        )
-                    })
-                }
-
-            </div >
-        )
     }
 }
 

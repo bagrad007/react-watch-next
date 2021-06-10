@@ -18,7 +18,7 @@ class searchResults extends Component {
                 {this.props.searchedMovies.map(movie => {
                     return (
                         <Container>
-                            <MovieDisplay props={movie} />
+                            <MovieDisplay movie={movie} />
                             <Button onClick={(e) => this.handleFavorite(movie)}>Add to Favorites</Button>
                         </Container>
                     )
