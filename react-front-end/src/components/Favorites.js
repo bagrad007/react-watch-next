@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchMovies, deleteMovie } from '../actions/index'
 import MovieDisplay from './MovieDisplay'
-import Button from 'react-bootstrap/Button'
 import '../stylesheets/moviecontainer.css'
+import '../stylesheets/reel.css'
 
 
 
@@ -21,8 +21,7 @@ export class Favorites extends Component {
 
 
     render() {
-        console.log(this.props)
-        if (this.props.movies !== []) {
+        if (this.props.movies.length !== 0) {
             return (
                 <div className="moviecontainer">
                     {
@@ -37,7 +36,7 @@ export class Favorites extends Component {
                 </div >
             )
         } else {
-            return <h1>Add a movie from Search to get started!</h1>
+            return <h1 className="headerP">Add a movie from Search to get started!</h1>
         }
 
     }
