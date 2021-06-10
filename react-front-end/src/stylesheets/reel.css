@@ -1,0 +1,12 @@
+.reel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 50%;
+}
+
+.headerHome {
+    text-align: center;
+    padding-bottom: 50px;
+}
