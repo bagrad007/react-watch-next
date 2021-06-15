@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import { Route, Switch, useHistory, withRouter } from 'react-router-dom'
+import { Route, Switch, useHistory } from 'react-router-dom'
 
 import Home from './Home'
 import Favorites from './Favorites'

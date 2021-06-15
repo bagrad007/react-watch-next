@@ -2,7 +2,6 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 
 const movieDisplay = (props) => {
-    console.log(props)
     if (props.handleDelete) {
         return (
             <div>

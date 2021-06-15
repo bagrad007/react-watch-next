@@ -9,7 +9,6 @@ import '../stylesheets/reel.css'
 
 export class Favorites extends Component {
 
-
     componentDidMount() {
         this.props.fetchMovies()
     }
@@ -19,11 +18,11 @@ export class Favorites extends Component {
     }
 
 
-
     render() {
         if (this.props.movies.length !== 0) {
             return (
                 <div className="moviecontainer">
+
                     {
                         this.props.movies.map(movie => {
                             return (
@@ -45,7 +44,6 @@ export class Favorites extends Component {
 
 
 const mapStateToProps = (state) => {
-
     return { movies: state.movies }
 
 }

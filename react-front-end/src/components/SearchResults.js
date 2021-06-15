@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { searchMovies, addFavorite } from '../actions/index'
-import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import MovieDisplay from './MovieDisplay'
+import '../stylesheets/moviecontainer.css'
 
 
 class searchResults extends Component {
@@ -14,13 +14,13 @@ class searchResults extends Component {
 
     render() {
         return (
-            <div>
+            <div className="moviecontainer">
                 {this.props.searchedMovies.map(movie => {
                     return (
-                        <Container>
+                        <div>
                             <MovieDisplay movie={movie} />
                             <Button onClick={(e) => this.handleFavorite(movie)}>Add to Favorites</Button>
-                        </Container>
+                        </div>
                     )
                 })
                 }

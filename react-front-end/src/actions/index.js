@@ -8,7 +8,6 @@ export const fetchMovies = () => {
                 dispatch({ type: "FETCH_MOVIES", payload: movies })
             })
     };
-
 };
 
 export const searchMovies = (searchTerm) => {
